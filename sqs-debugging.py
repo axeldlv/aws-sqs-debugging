@@ -53,14 +53,6 @@ def list_messages():
         # Raw Body
         body = msg["Body"]
         print(f"\nRaw Body:\n{body}")
-        
-        try:
-            outer = json.loads(body)
-            inner = json.loads(outer.get("Message", "{}"))
-            print("\nParsed Message:")
-            print(json.dumps(inner, indent=2))
-        except Exception as e:
-            print("Could not parse message body:", str(e))
 
 def purge_queue():
     print("Which queue do you want to purge: \n")
